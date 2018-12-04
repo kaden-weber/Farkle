@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Dice View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="DiceViewController" customModule="Farkle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FdL-uw-gtB" userLabel="Roll Button">
+                                <rect key="frame" x="163" y="365" width="48" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Roll"/>
+                                <connections>
+                                    <action selector="rollButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fAy-Tl-Cxy"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="IQL-Pz-ceu" userLabel="PlayView">
+                                <rect key="frame" x="16" y="84" width="343" height="212"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="kkx-yl-Vr9" userLabel="Dice Top Row">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="100"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AHO-i0-fz7">
+                                                <rect key="frame" x="0.0" y="0.0" width="109" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="1YS-g2-Eib"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="ogO-Ta-RBp"/>
+                                                </constraints>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="diceOneButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ihL-c1-rCm"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9OJ-cl-P23">
+                                                <rect key="frame" x="117" y="0.0" width="109" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="49G-ZD-yiI"/>
+                                                    <constraint firstAttribute="width" constant="100" id="RrI-a8-dN1"/>
+                                                </constraints>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="diceTwoButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dK1-eF-cLE"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1c-CP-U9d">
+                                                <rect key="frame" x="234" y="0.0" width="109" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="HsG-OR-GlH"/>
+                                                    <constraint firstAttribute="width" constant="100" id="Sbe-Lw-BhE"/>
+                                                </constraints>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="diceThreeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Aj3-aI-dBD"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="R9V-pO-PwZ" userLabel="Dice Bottom Row">
+                                        <rect key="frame" x="0.0" y="112" width="343" height="100"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TYe-Sp-40g">
+                                                <rect key="frame" x="0.0" y="0.0" width="109" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="Asq-5k-fIW"/>
+                                                    <constraint firstAttribute="height" constant="100" id="Wq3-KH-cOT"/>
+                                                </constraints>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="diceFourButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J04-VY-lus"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5m0-Wb-X35">
+                                                <rect key="frame" x="117" y="0.0" width="109" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="1QN-45-TdS"/>
+                                                    <constraint firstAttribute="width" constant="100" id="9DL-Kf-bCf"/>
+                                                </constraints>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="diceFiveButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6xQ-Pn-5BK"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OQX-AH-Snh">
+                                                <rect key="frame" x="234" y="0.0" width="109" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="Gg1-dk-HwD"/>
+                                                    <constraint firstAttribute="height" constant="100" id="fQg-nc-syk"/>
+                                                </constraints>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="diceSixButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bhG-CK-4Da"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0gA-IT-ngz">
+                                <rect key="frame" x="16" y="312" width="127" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Score:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqf-Bk-HZT">
+                                        <rect key="frame" x="0.0" y="0.0" width="77" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZu-UZ-ppI">
+                                        <rect key="frame" x="77" y="0.0" width="50" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="orZ-4L-2vY">
+                                <rect key="frame" x="67" y="456" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ezB-1E-ZnT">
+                                        <rect key="frame" x="0.0" y="28" width="240" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ezB-1E-ZnT" id="t2L-XA-XDK">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="QwF-OH-tRO">
+                                        <rect key="frame" x="0.0" y="72" width="240" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QwF-OH-tRO" id="KoQ-YK-Zfl">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="gjx-as-Lbx">
+                                        <rect key="frame" x="0.0" y="116" width="240" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gjx-as-Lbx" id="9Mw-RT-RXR">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k2e-bL-e54">
+                                <rect key="frame" x="253" y="383" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="End Turn">
+                                    <color key="titleColor" red="1" green="0.034920876077064067" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="endTurnButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ik3-jX-yzS"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AbE-Qb-iRL" userLabel="Scoring">
+                                <rect key="frame" x="175" y="312" width="156" height="50"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wl7-nO-yln">
+                                        <rect key="frame" x="0.0" y="0.0" width="156" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score From Roll:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ru7-cw-VCW">
+                                                <rect key="frame" x="0.0" y="0.0" width="106" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzQ-5k-AHz">
+                                                <rect key="frame" x="106" y="0.0" width="50" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IQL-Pz-ceu" secondAttribute="trailing" constant="16" id="AaM-rh-BM8"/>
+                            <constraint firstItem="AbE-Qb-iRL" firstAttribute="top" secondItem="IQL-Pz-ceu" secondAttribute="bottom" constant="16" id="EQe-Td-lbg"/>
+                            <constraint firstItem="FdL-uw-gtB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LgV-ax-og9"/>
+                            <constraint firstItem="IQL-Pz-ceu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="U6g-Pt-qnm"/>
+                            <constraint firstItem="IQL-Pz-ceu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="WpQ-Ec-bhS"/>
+                            <constraint firstItem="FdL-uw-gtB" firstAttribute="top" secondItem="AbE-Qb-iRL" secondAttribute="bottom" constant="16" id="bbB-gN-cCk"/>
+                            <constraint firstItem="0gA-IT-ngz" firstAttribute="top" secondItem="IQL-Pz-ceu" secondAttribute="bottom" constant="16" id="kJs-WI-Ob9"/>
+                            <constraint firstItem="AbE-Qb-iRL" firstAttribute="leading" secondItem="0gA-IT-ngz" secondAttribute="trailing" constant="32" id="pkE-Nd-d4F"/>
+                            <constraint firstItem="IQL-Pz-ceu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="64" id="u1d-7B-ksk"/>
+                            <constraint firstItem="0gA-IT-ngz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="wxM-bg-Rxw"/>
+                            <constraint firstItem="AbE-Qb-iRL" firstAttribute="top" secondItem="IQL-Pz-ceu" secondAttribute="bottom" constant="16" id="za0-Fg-RF2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="diceFiveButton" destination="5m0-Wb-X35" id="30X-Ra-Hzy"/>
+                        <outlet property="diceFourButton" destination="TYe-Sp-40g" id="Jsy-IB-kVY"/>
+                        <outlet property="diceOneButton" destination="AHO-i0-fz7" id="Eln-fQ-Nyq"/>
+                        <outlet property="diceSixButton" destination="OQX-AH-Snh" id="bnk-VO-Gg9"/>
+                        <outlet property="diceThreeButton" destination="h1c-CP-U9d" id="Mdy-lA-9xd"/>
+                        <outlet property="diceTwoButton" destination="9OJ-cl-P23" id="TAb-YK-Efp"/>
+                        <outlet property="rollButton" destination="FdL-uw-gtB" id="Wxd-Fh-o9X"/>
+                        <outlet property="scoreFromRollField" destination="gzQ-5k-AHz" id="unY-TZ-kHM"/>
+                        <outlet property="totalScoreField" destination="gZu-UZ-ppI" id="f7T-ro-9Q4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>
