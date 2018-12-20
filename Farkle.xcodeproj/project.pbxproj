@@ -16,6 +16,7 @@
 		D748506F21A27B15006DEF0E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D748506D21A27B15006DEF0E /* LaunchScreen.storyboard */; };
 		D748507A21A27B15006DEF0E /* FarkleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D748507921A27B15006DEF0E /* FarkleTests.swift */; };
 		D748508521A288C8006DEF0E /* DiceSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D748508421A288C8006DEF0E /* DiceSet.swift */; };
+		D7B3983421CB2680004E0688 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B3983321CB2680004E0688 /* SetupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		D748507921A27B15006DEF0E /* FarkleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarkleTests.swift; sourceTree = "<group>"; };
 		D748507B21A27B15006DEF0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D748508421A288C8006DEF0E /* DiceSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceSet.swift; sourceTree = "<group>"; };
+		D7B3983321CB2680004E0688 /* SetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,15 +85,12 @@
 		D748506321A27B13006DEF0E /* Farkle */ = {
 			isa = PBXGroup;
 			children = (
-				D748506421A27B13006DEF0E /* AppDelegate.swift */,
-				D748506621A27B13006DEF0E /* DiceViewController.swift */,
-				D748506821A27B13006DEF0E /* Main.storyboard */,
 				D748506B21A27B15006DEF0E /* Assets.xcassets */,
-				D748506D21A27B15006DEF0E /* LaunchScreen.storyboard */,
+				D748506421A27B13006DEF0E /* AppDelegate.swift */,
+				D7B3983121CB23EB004E0688 /* view */,
+				D7B3983021CB23BE004E0688 /* storyboards */,
 				D748507021A27B15006DEF0E /* Info.plist */,
-				D748508421A288C8006DEF0E /* DiceSet.swift */,
-				D743543021A4E47000B10209 /* Scorer.swift */,
-				D743543221A5D03800B10209 /* ScoreKeeper.swift */,
+				D7B3983221CB2459004E0688 /* model */,
 			);
 			path = Farkle;
 			sourceTree = "<group>";
@@ -103,6 +102,34 @@
 				D748507B21A27B15006DEF0E /* Info.plist */,
 			);
 			path = FarkleTests;
+			sourceTree = "<group>";
+		};
+		D7B3983021CB23BE004E0688 /* storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				D748506D21A27B15006DEF0E /* LaunchScreen.storyboard */,
+				D748506821A27B13006DEF0E /* Main.storyboard */,
+			);
+			path = storyboards;
+			sourceTree = "<group>";
+		};
+		D7B3983121CB23EB004E0688 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				D748506621A27B13006DEF0E /* DiceViewController.swift */,
+				D7B3983321CB2680004E0688 /* SetupViewController.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		D7B3983221CB2459004E0688 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				D748508421A288C8006DEF0E /* DiceSet.swift */,
+				D743543021A4E47000B10209 /* Scorer.swift */,
+				D743543221A5D03800B10209 /* ScoreKeeper.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +237,7 @@
 				D743543321A5D03800B10209 /* ScoreKeeper.swift in Sources */,
 				D743543121A4E47000B10209 /* Scorer.swift in Sources */,
 				D748506721A27B13006DEF0E /* DiceViewController.swift in Sources */,
+				D7B3983421CB2680004E0688 /* SetupViewController.swift in Sources */,
 				D748506521A27B13006DEF0E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,28 +11,28 @@ import UIKit
 class DiceViewController: UIViewController {
 
    //Mark: Outlets and actions
-   @IBOutlet weak var diceOneButton: UIButton!
-   @IBAction func diceOneButtonPressed(_ sender: Any) {
+   @IBOutlet weak var dieOneButton: UIButton!
+   @IBAction func dieOneButtonPressed(_ sender: Any) {
       toggleSelected(position: 1)
    }
-   @IBOutlet weak var diceTwoButton: UIButton!
-   @IBAction func diceTwoButtonPressed(_ sender: Any) {
+   @IBOutlet weak var dieTwoButton: UIButton!
+   @IBAction func dieTwoButtonPressed(_ sender: Any) {
       toggleSelected(position: 2)
    }
-   @IBOutlet weak var diceThreeButton: UIButton!
-   @IBAction func diceThreeButtonPressed(_ sender: Any) {
+   @IBOutlet weak var dieThreeButton: UIButton!
+   @IBAction func dieThreeButtonPressed(_ sender: Any) {
       toggleSelected(position: 3)
    }
-   @IBOutlet weak var diceFourButton: UIButton!
-   @IBAction func diceFourButtonPressed(_ sender: Any) {
+   @IBOutlet weak var dieFourButton: UIButton!
+   @IBAction func dieFourButtonPressed(_ sender: Any) {
       toggleSelected(position: 4)
    }
-   @IBOutlet weak var diceFiveButton: UIButton!
-   @IBAction func diceFiveButtonPressed(_ sender: Any) {
+   @IBOutlet weak var dieFiveButton: UIButton!
+   @IBAction func dieFiveButtonPressed(_ sender: Any) {
       toggleSelected(position: 5)
    }
-   @IBOutlet weak var diceSixButton: UIButton!
-   @IBAction func diceSixButtonPressed(_ sender: Any) {
+   @IBOutlet weak var dieSixButton: UIButton!
+   @IBAction func dieSixButtonPressed(_ sender: Any) {
       toggleSelected(position: 6)
    }
    
@@ -67,14 +67,30 @@ class DiceViewController: UIViewController {
 
       rollButton.setTitle("Roll", for: UIControl.State.normal)
       
-      diceButtonList.append(diceOneButton)
-      diceButtonList.append(diceTwoButton)
-      diceButtonList.append(diceThreeButton)
-      diceButtonList.append(diceFourButton)
-      diceButtonList.append(diceFiveButton)
-      diceButtonList.append(diceSixButton)
-
+      diceButtonList.append(dieOneButton)
+      diceButtonList.append(dieTwoButton)
+      diceButtonList.append(dieThreeButton)
+      diceButtonList.append(dieFourButton)
+      diceButtonList.append(dieFiveButton)
+      diceButtonList.append(dieSixButton)
+      
+      setDisabledImages()
       setDiceImages()
+      reset()
+   }
+   
+   func reset() {
+      for button in diceButtonList {
+         button.isEnabled = false
+      }
+   }
+   
+   func setDisabledImages(){
+      var index = 1
+      for button in diceButtonList{
+         button.setBackgroundImage(getDieImage(position: index, disabled: true), for: UIControl.State.disabled)
+         index += 1
+      }
    }
    
    func toggleSelected(position: Int) {
@@ -87,35 +103,40 @@ class DiceViewController: UIViewController {
    }
    
    func setDiceImages(){
+      
       var index = 1
       for button in diceButtonList{
-         button.setBackgroundImage(getDiceImage(position: index), for: UIControl.State.normal)
+         button.setBackgroundImage(getDieImage(position: index, disabled: false), for: UIControl.State.normal)
          index += 1
       }
    }
-   func getDiceImage(position: Int) -> UIImage? {
+   func getDieImage(position: Int, disabled: Bool) -> UIImage? {
       var assetName = ""
-      let diceValue = diceSet.valueAt(position: position)
-      if diceValue == 1 {
+      let dieValue = diceSet.valueAt(position: position)
+      if dieValue == 1 {
          assetName = "dice-one"
-      } else if diceValue == 2 {
+      } else if dieValue == 2 {
          assetName = "dice-two"
-      } else if diceValue == 3 {
+      } else if dieValue == 3 {
          assetName = "dice-three"
-      } else if diceValue == 4 {
+      } else if dieValue == 4 {
          assetName = "dice-four"
-      } else if diceValue == 5 {
+      } else if dieValue == 5 {
          assetName = "dice-five"
-      } else if diceValue == 6 {
+      } else if dieValue == 6 {
          assetName = "dice-six"
       }
       
-      if diceSet.dieIsSelectable(position: position){
+      if disabled{
+         assetName.append("-grayed")
+      }
+      else if diceSet.dieIsSelectable(position: position){
          assetName.append("-selectable")
       }
-      if diceSet.dieIsSelected(position: position) {
+      else if diceSet.dieIsSelected(position: position) {
          assetName.append("-selected")
       }
+      
       return UIImage.init(named: assetName)
    }
    
