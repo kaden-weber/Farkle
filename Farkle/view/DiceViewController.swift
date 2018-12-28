@@ -35,10 +35,19 @@ class DiceViewController: UIViewController {
    @IBAction func dieSixButtonPressed(_ sender: Any) {
       toggleSelected(position: 6)
    }
+   func toggleSelected(position: Int) {
+      if diceSet.dieIsSelected(position: position) {
+         diceSet.setDie(selected: false, position: position)
+      } else {
+         diceSet.setDie(selected: true, position: position)
+      }
+      setDiceImages()
+   }
    
    @IBOutlet weak var rollButton: UIButton!
    @IBAction func rollButtonPressed(_ sender: Any) {
       diceSet.roll()
+      setDisabledImages()
       setDiceImages()
       getScore()
    }
@@ -93,17 +102,7 @@ class DiceViewController: UIViewController {
       }
    }
    
-   func toggleSelected(position: Int) {
-      if diceSet.dieIsSelected(position: position) {
-         diceSet.setDie(selected: false, position: position)
-      } else {
-         diceSet.setDie(selected: true, position: position)
-      }
-      setDiceImages()
-   }
-   
    func setDiceImages(){
-      
       var index = 1
       for button in diceButtonList{
          button.setBackgroundImage(getDieImage(position: index, disabled: false), for: UIControl.State.normal)
@@ -147,7 +146,7 @@ class DiceViewController: UIViewController {
       } else {
          scoreKeeper.currentScore += scoreKeeper.currentRoll
       }
-      totalScoreField.text = String(scoreKeeper.currentScore)
+      //totalScoreField.text = String(scoreKeeper.currentScore)
       scoreFromRollField.text = String(scoreKeeper.currentRoll)
    }
    

@@ -20,24 +20,31 @@ class DiceSet {
       }
    }
    
-   func getImageForDie(position: Int) -> UIImage? {
-      return dieAt(position: position).image
-   }
-   
    func dieIsSelected(position: Int) -> Bool {
-      return dieAt(position: position).selected
+      if dieAt(position: position).state == DieState.selected {
+         return true
+      } else {
+         return false
+      }
    }
    
    func dieIsSelectable(position: Int) -> Bool {
-      return dieAt(position: position).selectable
-   }
+      if dieAt(position: position).state == DieState.scoring {
+         return true
+      } else {
+         return false
+      }   }
    
    func setDie(selected: Bool, position: Int) {
-      dieAt(position: position).selected = selected
+      dieAt(position: position).state = DieState.selected
    }
    
    func setDie(selectable: Bool, position: Int) {
-      dieAt(position: position).selectable = selectable
+      dieAt(position: position).state = DieState.scoring
+   }
+   
+   func setDie(state: DieState, position: Int) {
+      dieAt(position: position).state = state
    }
    
    func valueAt(position: Int) -> Int {
@@ -68,16 +75,14 @@ class DiceSet {
    
    func roll() {
       for die in myDiceSet {
-         if !die.selected {
-            die.roll()
-         }
+         die.roll()
       }
    }
    
    func rolledValues() -> [Int] {
       var values = [Int]()
       for die in myDiceSet {
-         if !die.selected {
+         if die.state != DieState.selected || die.state != DieState.disabled {
             values.append(die.value)
          }
       }
@@ -86,23 +91,5 @@ class DiceSet {
    
 }
 
-class Die {
-   
-   var value = 1
-   var image = UIImage(named: "dice-one")
-   var selectable = false
-   var selected = false
-   
-   func roll(){
-      let newRoll = Int.random(in: 1...6)
-      value = newRoll
-      set(newValue: newRoll)
-   }
-   
-   func set(newValue: Int){
-      value = newValue
-   }
-   
-}
 
 
